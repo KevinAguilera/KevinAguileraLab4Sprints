@@ -1,0 +1,36 @@
+  <form class="modal-content"  [formGroup] = "registroForm" (ngSubmit)="registro()">
+        <div  class="container">
+          <h1 class="h3 mb-3 font-weight-normal">Registro de Usuario</h1>
+         <!-- <label><b>Usuario</b></label>
+          <input class="form-control" type="text" [(ngModel)]="user" [ngModelOptions]="{standalone: true }"  placeholder="Ingrese su nombre de usuario" name="user" required>
+          <label><b>Cuil</b></label>
+          <input class="form-control" type="number" [(ngModel)]="cuil" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su Cuit/Cuil" name="email" required>
+          <label><b>Sexo</b></label>
+         
+          <select [(ngModel)]="sexo" [ngModelOptions]="{standalone: true}" class="browser-default custom-select">
+            <option selected value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+          </select>-->
+          <label><b>Email</b></label>
+          <input class="form-control" type="email" formControlName="correo"
+                 placeholder="Ingrese su correo" name="correo" [class.is-danger]="emailInvalido"
+                [class.is-success]="emailValido" >
+          <div *ngIf="emailInvalido">        
+            <p class="help is-danger" *ngIf="email?.hasError('required')">Campo vacio</p>
+            <p class="help is-danger" *ngIf="email?.hasError('email')">Formato incorrecto</p>
+          </div>      
+  
+          <label><b>Clave</b></label>
+          <input class="form-control" type="password" formControlName="clave"
+                  placeholder="Ingrese su contraseña" name="psw" [class.is-danger]="passwordInvalido"
+                  [class.is-success]="passwordValido">
+          <div *ngIf="passwordInvalido">        
+            <p class="help is-danger" *ngIf="password?.hasError('required')">Campo vacio</p>
+            <p class="help is-danger" *ngIf="password?.hasError('minLength')">Debe contener al menos 4 caracteres</p>
+          </div> 
+  
+          <div class="divBoton" style="margin-top: 10px;">
+            <button  type="submit" class="btn-success btn-sm boton " [disabled]="!registroForm.valid">Registrarme</button>
+          </div>
+        </div>
+      </form>

@@ -1,0 +1,231 @@
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body{
+  background-color: white;
+  font-family: "Open Sans";
+  color: black;
+  font-size: 16px;
+}
+.contenedor{
+  font-family: "Open Sans";
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Header */
+
+header{
+ background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-height: 400px;
+}
+
+header .menu{
+  margin: 2rem 0rem;
+  text-align: right;
+}
+header .menu a{
+  margin:0rem 2rem;
+  color: white;
+  display: inline-block;
+  text-decoration:none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 9px;
+  font-size: 1em;
+}
+header .menu a:hover{
+  border-bottom: 2px solid  rgba(1, 184, 240, 0.87);
+
+}
+header .contenedor_texto{
+  display: flex;
+  margin: 130px 0px;
+  justify-content: center;
+  align-content: center;
+
+}
+header .contenedor_texto .texto{
+  padding: 1rem;
+  border-radius: 3px;
+  display: inline-block;
+  text-align: center;
+}
+header .contenedor_texto .texto .h1,
+header .contenedor_texto .texto .h2{
+  color: white;
+  font-weight: 300;
+  margin: 0px;
+}
+
+header .contenedor_texto .texto .nombre{
+  margin-bottom: 10px;
+  font-size: 50px;
+  line-height: 50px;
+  color: white;
+}
+
+header .contenedor_texto .texto .profesion{
+
+  color: white;
+  font-size: 25px;
+  line-height: 25px;
+
+
+}
+/* MAIN */
+/* Acerca de*/
+.main .contenedor{
+  overflow: visible;
+  text-align: center;
+  margin-top: -60px;
+}
+.main .acerca_de .foto .img{
+  vertical-align: top;
+  border-radius: 50%;
+ /* border: 5px solid rgba(0, 169, 221, 0.2);*/
+ -webkit-box-shadow: 7px 7px 50px -7px rgba(12,98,156,1);
+ -moz-box-shadow: 7px 7px 50px -7px rgba(12,98,156,1);
+ box-shadow: 7px 7px 50px -7px rgba(12,98,156,1);
+}
+
+.main .acerca_de .texto{
+   font-weight: 600;
+   font-size: 1em;
+   line-height: 30px;
+   width: 80%;
+   margin: 40px auto 60px auto;
+
+}
+
+
+.main .acerca_de .texto .titulo{
+  font-size: 34px;
+  line-height: 34px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  color: brown;
+  text-align: center;
+}
+.main .acerca_de .texto .bold{
+  color: #3895ea;
+}
+
+/* imagenes*/
+.main .trabajos{
+
+  background-color: white;
+
+  padding: 60px,0px;
+}
+
+.main .trabajos .contenedor{
+  /* display: flex; */
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.main .trabajos .titulo{
+  font-size: 34px;
+  line-height: 34px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  color: #3895ea;
+  text-align: center;
+
+}
+
+.main .trabajos .contenedor_trabajos{
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+
+}
+
+.main .trabajos .contenedor_trabajos .trabajo{
+  width: 30%;
+  margin-bottom: 40px;
+}
+.main .trabajos .contenedor_trabajos .trabajo .thumd{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.main .trabajos .contenedor_trabajos .trabajo .thumb img
+{
+     width: 100%;
+     height: 13rem;
+     border-radius: 3%;
+     vertical-align: top;
+     margin-bottom: 2rem;
+     -webkit-box-shadow: 21px 29px 27px -22px rgba(0,0,0,1);
+     -moz-box-shadow: 21px 29px 27px -22px rgba(0,0,0,1);
+     box-shadow: 21px 29px 27px -22px rgba(0,0,0,1);
+}
+
+#quien, #miJuego{background-color: #5da3a5;
+  padding: 25px;
+  border-radius: 10px;}
+.main .trabajos .contenedor_trabajos .trabajo
+{
+  text-align: center;
+}
+
+.main .trabajos .contenedor_trabajos .trabajo .nombre{
+  color: #3895ea;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.main .trabajos .contenedor_trabajos .trabajo .categoria{
+
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(202, 198, 198);
+}
+
+
+/* Responsive*/
+@media screen and (max-width: 800px)
+{
+    header .menu{
+        text-align: center;
+    }
+
+    .main .trabajos .contenedor_trabajos .trabajo{
+        width: 46%;
+    }
+    .main .acerca_de .foto .img{
+      width: 150px;
+      height: 150px;
+  }
+}
+
+@media screen and (max-width: 500px)
+{
+    header .contenedor_texto .texto .nombre{
+        font-size: 35px;
+    }
+    header .contenedor_texto .texto .profesion{
+        font-size: 18px;
+    }
+    .main .trabajos .contenedor_trabajos .trabajo{
+      width: 80%;
+      align-content: center;
+      margin-left: 3rem;
+  }
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="jumbotron ld ld-slide-ltr-in"  style="margin-top: 5px;">
+        <h1 class="display-4">Ahorcado</h1>
+        <br>
+        <div style="margin-bottom: 3rem;">
+            <div class="container tablero">
+                <div class="row ld ld-vortex-alt-in" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
+                    <h4>{{ palabraEscondida }}</h4>
+                    <br>
+                    <img width="250" src={{dibujito}}>
+                </div>
+                <div class="row ld ld-vortex-alt-in" style="display: flex; flex-direction: row; justify-content: center;">
+                    <div class="column" style="min-width: 50%; max-height: 80px">
+                        <label style="margin-right: 10px; margin-bottom: 20px;">Seleccione una letra</label>
+            
+                        <br>
+                        <div *ngFor="let letra of letras" class="padre">
+            
+                            <button class="letras" (click)="seleccionarLetra(letra)" [disabled]="!enJuego"> {{letra}} </button>
+                        </div>
+                        
+                    </div>
+            
+            
+                    <div *ngIf="enJuego" class="column" style="min-width: 50%; text-align: left; max-height: 80px">
+                        <!--<h4>Cantidad de vidas que te quedan disponibles: {{vidas}}</h4>-->
+                        <br>
+                        <h4>Ya probaste con las letras: {{letrasUtilizadas}}</h4>
+                        <h4>Puntos: {{contadorPuntos}}</h4>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div style="justify-content: center; margin-top: 2rem;" class="row" *ngIf="!enJuego">
+            <p><button (click)="nuevo()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">
+                    Nuevo juego</button></p>
+        </div>
+        <div *ngIf="save">
+            <button class="btn btn-success" onclick="this.blur();" type="button" id="button-verificar" (click)="guardar()">Guardar
+                partida</button>
+        </div>
+        <div style="justify-content: center; margin-top: 2rem;" onclick="this.blur();" class="row" *ngIf="enJuego">
+            <p><button  (click)="finalizar()" class="btn btn-danger btn-lg" type="button" id="button-fin">
+                    Finalizar</button></p>
+        </div>
+    </div>
+</div>

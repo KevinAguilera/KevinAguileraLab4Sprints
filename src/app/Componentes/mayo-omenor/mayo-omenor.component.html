@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="jumbotron ld ld-slide-ltr-in"  style="margin-top: 5px;">
+        <h1 class="display-4">Mayor o Menor</h1>
+        <br>
+        <div style="margin-bottom: 3rem;">
+            <div class="container tablero">
+                <div *ngIf="enJuego" class="row ld ld-vortex-alt-in" style="display: flex; flex-direction: column; justify-content: center; align-content: center;">
+                    <img width="250" src="{{carta.image}}">
+                </div>
+                <div class="row ld ld-vortex-alt-in" style="display: flex; flex-direction: row; justify-content: center;">
+                    <div class="column" style="min-width: 50%; max-height: 80px">
+                        <br><br>
+                        <label style="margin-right: 10px; margin-bottom: 20px;">La próxima carta será....</label>
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <button class="btn btn-primary" (click)="predecirCarta('mayor')" [disabled]="!enJuego"> MENOR </button>
+                            </div>
+                                <div class="col-4">
+                                <button class="btn btn-success" (click)="predecirCarta('igual')" [disabled]="!enJuego"> IGUAL </button>
+                            </div>
+                                <div class="col-4">
+                                <button class="btn btn-danger" (click)="predecirCarta('menor')" [disabled]="!enJuego"> MAYOR </button>
+                            </div>
+                        </div>
+                        <div *ngIf="enJuego" class="row mt-3">
+                            <br>
+                            <h4>Puntos: {{contadorPuntos}}</h4>
+                        </div> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
+       
+        <div style="justify-content: center; margin-top: 2rem;" class="row" *ngIf="!enJuego">
+            <p><button (click)="nuevo()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">
+                    Nuevo juego</button></p>
+        </div>
+        <div *ngIf="save">
+            <button class="btn btn-success" onclick="this.blur();" type="button" id="button-verificar" (click)="guardar()">Guardar
+                partida</button>
+        </div>
+        <div style="justify-content: center; margin-top: 2rem;" onclick="this.blur();" class="row" *ngIf="enJuego">
+            <p><button  (click)="finalizar()" class="btn btn-danger btn-lg" type="button" id="button-fin">
+                    Finalizar</button></p>
+        </div>
+    </div>
+</div>

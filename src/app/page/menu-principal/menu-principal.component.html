@@ -1,0 +1,17 @@
+<nav class="site-header sticky-top py-1">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2" href="#" aria-label="Product">
+        <img class="loguito" src="../assets/imagenes/loguito.png" alt="">
+      </a>
+      <a *ngIf='estado_activo'class="py-2 d-none d-md-inline-block" routerLink="QuienSoy" routerActive="activebutton">Quien Soy</a>
+      <a *ngIf='estado_activo'class="py-2 d-none d-md-inline-block" routerLink="Chat" routerActive="activebutton">Chat</a>
+      <!--<a *ngIf='estado_activo'class="py-2 d-none d-md-inline-block" routerLink="Encuesta" routerActive="activebutton">Encuesta</a>-->
+      <!--<a *ngIf='estado_activo'class="py-2 d-none d-md-inline-block" routerLink="Listados" routerActive="activebutton">Listados</a>-->
+    
+      
+      <a *ngIf='estado_activo'class="py-2 d-none d-md-inline-block" style="color: red;" routerActive="activebutton">{{mail_usuario}}</a>
+      <a *ngIf='estado_activo'class="py-2 d-none d-md-inline-block" (click)='cerrarSesion()' routerActive="activebutton">Cerrar Sesión</a>
+      <a *ngIf='!estado_activo || estado_activo==null' class="py-2 d-none d-md-inline-block" routerLink="Login" routerActive="activebutton">Login</a>
+      <a *ngIf='!estado_activo || estado_activo==null' class="py-2 d-none d-md-inline-block" routerLink="Registro" routerActive="activebutton">Registro</a>
+    </div>
+  </nav>

@@ -1,0 +1,70 @@
+
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+input{
+  border-radius: 1rem;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 3% auto 15% auto;/*5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    border-radius: 2rem;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.imgcontainer {
+    text-align: center;
+    
+   /* object-fit: cover;*/
+   overflow:hidden;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+/*@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+   
+    img{
+        width: 10rem;
+        height: 10rem;
+    }
+    .modal{
+        width: 100%;
+        height: 100%;
+    }
+    .modal-content{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 430px) {
+    
+    .boton{
+    width: auto;
+    }
+}*/

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="jumbotron ld ld-slide-ltr-in"  style="margin-top: 5px;">
+        <h1>Chat</h1>
+
+        <div class="mensajes" id="mensajes">
+            <div class="h5" *ngFor="let chat of chatServ.chats ">
+                <div *ngIf="chatServ.usuario.id==chat.id; else notUser">
+                    <div style="text-align: right;">
+                        <span style="font-size: 1rem;" >{{chat.time}}</span>
+                        <span class="badge badge-primary text-wrap">
+                            <span *ngIf="chat.nombre; else notName">{{ chat.nombre}} :</span>
+                            <ng-template #notName>{{chat.email}} : </ng-template>
+                        </span>
+                        <p> {{chat.mensaje}} </p>
+                    </div>
+                </div>
+                <ng-template #notUser>
+                    <div>
+                        <span class="badge badge-success text-wrap">
+                            <span *ngIf="chat.nombre; else notName">{{ chat.nombre}} :</span>
+                            <ng-template #notName>{{chat.email}} :</ng-template>
+                        </span> -
+                        <span style="font-size: 1rem;">{{chat.time}}</span>
+                        <p> {{chat.mensaje}} </p>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="buttomChat">
+            <input type="text" class="navbar navbar-expand-lg navbar-dark ingresoMensaje" size="39"   
+            [(ngModel)]="mensaje" (keyup.enter)="enviar_mensaje()" placeholder="Escribí el mensaje y presioná 'Enter'" >
+        </div>
+    </div>
+</div>

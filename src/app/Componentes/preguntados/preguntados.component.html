@@ -1,0 +1,54 @@
+<div class="container" style="height: auto;">
+    <div class="jumbotron ld ld-slide-ltr-in"  style="margin-top: 5px;">
+        <h1 class="display-4">Preguntados</h1>
+        <br>
+        <div style="margin-bottom: 3rem;">
+            <div class="container tablero">
+                <div *ngIf="enJuego" class="row ld ld-vortex-alt-in" style="display: flex; flex-direction: row; justify-content: center;">
+                    <!--<div class="column" style="min-width: 50%; max-height: 80px">-->
+                        
+                        <div *ngIf="this.paisActual">
+                            <div class="text-center">
+                                <h3>¿Qué país es?</h3>
+                                <h5>Puntuacion: {{contadorPuntos}}</h5>
+                                <img [src]="paisActual.flags.png">
+                            </div>
+                            <div class="row text-center" style="margin-top: 20px;">
+                                <div class="col-3">
+                                    <button class="btn btn-primary" (click)="elegir(0)">{{paises[0].translations.spa.official}}</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-success" (click)="elegir(1)">{{paises[1].translations.spa.official}}</button>
+                        
+                                </div>
+                            <!--</div>
+                            <div class="row text-center" style="margin-top: 20px;">-->
+                                <div class="col-3">
+                                    <button class="btn btn-warning" (click)="elegir(2)">{{paises[2].translations.spa.official}}</button>
+                        
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-danger" (click)="elegir(3)">{{paises[3].translations.spa.official}}</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <div style="justify-content: center; margin-top: 2rem;" class="row" *ngIf="!enJuego">
+            <p><button (click)="nuevo()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">
+                    Nuevo juego</button></p>
+        </div>
+        <div *ngIf="save">
+            <button class="btn btn-success" onclick="this.blur();" type="button" id="button-verificar" (click)="guardar()">Guardar
+                partida</button>
+        </div>
+        <div style="justify-content: center; margin-top: 2rem;" onclick="this.blur();" class="row" *ngIf="enJuego">
+            <p><button  (click)="finalizar()" class="btn btn-danger btn-lg" type="button" id="button-fin">
+                    Finalizar</button></p>
+        </div>
+    </div>
+</div>
+

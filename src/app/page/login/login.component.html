@@ -1,0 +1,26 @@
+<div id="id01">
+<form  class="form-signin modal-content" style="margin-top: 3rem;">
+    <h1 class="h3 mb-3 font-weight-normal">Inicio de Sesión</h1>
+    <div style="justify-content: center; display:flex; flex-direction: row; flex-wrap: wrap; margin-bottom: 2rem;">
+        <button (click)="invitado()" class="btn-warning invitado"  onclick="this.blur();">Ingresar como invitado</button>
+        <button (click)="administrador()" class="btn-warning invitado"  onclick="this.blur();">Ingresar como administrador</button>
+      </div>
+      
+      <div *ngIf="spiner"  style="position: absolute; justify-content: center; width:100%; z-index: 999;" class="row"><img src="../../../assets/imagenes/spiner.gif" alt=""></div>
+      
+      <div class="container"> 
+       <label ><b>Email</b></label>
+        <input  class="form-control" [ngClass]="emailClass"  id="email"   type="email" placeholder="Email"  [(ngModel)]="email"  name="uname" required>
+        <label><b>Clave</b></label>
+        <input  class="form-control" [ngClass]="claveClass"   type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
+         
+        <div class="divBoton">
+          <button class="btn-success btn-sm button"  *ngIf="logeando" type="submit" onclick="this.blur();"  (click)="Entrar()" >Ingresar</button>
+
+        </div>
+
+        <br>
+       
+      </div>
+</form>
+</div>
