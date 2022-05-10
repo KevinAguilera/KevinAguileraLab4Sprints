@@ -4,8 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../servicios/auth.service';
 import { Router } from '@angular/router';
 import { createOfflineCompileUrlResolver } from '@angular/compiler';
-//para poder hacer las validaciones
-//import { Validators, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -15,7 +14,6 @@ export class RegistroComponent implements OnInit {
 
    user:string;
    cuil:number;
-   //email:string;
    sexo:string;
    clave:string;
    clave2:string;
@@ -57,6 +55,7 @@ export class RegistroComponent implements OnInit {
           // this.toastr.error("Usuario ya registrado", "ERROR");
          })
         }
+      }
      // }
      //else
      // {
@@ -68,7 +67,7 @@ export class RegistroComponent implements OnInit {
 //{
     //  this.toastr.error("Datos incompletos o inválidos", "ERROR");
   //  }
-  }
+  
 
 
   ngOnInit() {

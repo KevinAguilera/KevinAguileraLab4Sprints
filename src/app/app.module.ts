@@ -21,7 +21,6 @@ import { MayoOMenorComponent } from './Componentes/mayo-omenor/mayo-omenor.compo
 import { PreguntadosComponent } from './Componentes/preguntados/preguntados.component';
 import { JuegosComponent } from './Componentes/juegos/juegos.component';
 import { ChatComponent } from './Componentes/chat/chat.component';
-import { ListadosComponent } from './Componentes/listados/listados.component';
 
 @NgModule({
   declarations: [

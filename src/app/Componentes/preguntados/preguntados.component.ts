@@ -31,7 +31,7 @@ export class PreguntadosComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentUser();
-    setTimeout(()=>{},100)
+    setTimeout(()=>{},10)
 
     this.apiService.ObtenerPaises().subscribe((paises: any) => {
       this.contadorPuntos=0;
@@ -74,14 +74,14 @@ export class PreguntadosComponent implements OnInit {
     this.save = true;   
     this.enJuego = false;
     this.juegoOff = !this.enJuego;
-    this.toastr.error("¡Perdiste!");
+    this.toastr.error("Manco", "Perdiste");
   }
   
   finalizar(){
     this.contadorPuntos=0;
     this.enJuego = false;
     this.juegoOff = !this.enJuego;
-    this.toastr.error("¿Te rendiste?", "Manco");
+    this.toastr.error("Intentalo de nuevo!", "");
   }
 
   guardar(){
