@@ -41,7 +41,7 @@ private subscription: Subscription;
   invitado(){
     
     this.email = "invitado@invitado.com";
-    this.clave = "123456";
+    this.clave = "222222";
   }
 
   administrador(){
@@ -49,10 +49,6 @@ private subscription: Subscription;
     this.clave = "222222";
   }
 
-  invitado2(){
-    this.email = "sofia@saladejuegossr.com";
-    this.clave = "123456";
-  }
   Entrar() {
    
     this.spiner=true

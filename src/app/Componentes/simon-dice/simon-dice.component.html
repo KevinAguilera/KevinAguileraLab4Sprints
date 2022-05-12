@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="jumbotron ld ld-slide-ltr-in"  style="margin-top: 5px;">
+        <h1>Simón Dice</h1>
+        <br>
+        <div>
+            <div style="height: 2rem;"> <p style="font-size: 1rem;" class="ld ld-slide-ltr-in" *ngIf="contador!=0">Aciertos: {{contador}}</p></div>
+            <div class="container tablero">
+                <div class="row ld ld-vortex-alt-in" style="display: flex; flex-direction: row; justify-content: center;">
+                    <div class="div-boton-juego ">
+                        <button (click)="botonApretado(1)" id="btn-verde"
+                            class="btn btn-success btn-md botones-juego bt"></button>
+                    </div>
+                    <div class="div-boton-juego">
+                        <button (click)="botonApretado(2)" id="btn-rojo"
+                            class="btn btn-danger btn-md botones-juego"></button>
+                    </div>
+                </div>
+                <div class="row ld ld-vortex-alt-in" style="display: flex; flex-direction: row; justify-content: center;">
+                   <div class="div-boton-juego">
+                        <button (click)="botonApretado(3)" id="btn-amarillo"
+                            class="btn btn-warning btn-md botones-juego"></button>
+                    </div>
+                    <div class="div-boton-juego">
+                        <button (click)="botonApretado(4)" id="btn-azul"
+                            class="btn btn-primary btn-md botones-juego"></button>
+                    </div>
+                </div>
+            </div>
+            <div  class=" row" style="margin-top: 2rem;" > 
+                <label  class="col-12" style="height: 2rem;">
+                    <p style="font-size: 1rem;" class="ld ld-jump-in" *ngIf="registrarSecuencia" >Repita la secuencia..</p>
+                </label>
+            </div>
+        </div>
+        <div style="justify-content: center; margin-top: 2rem;" class="row" *ngIf="!enJuego">
+            <p><button (click)="nuevo()" class="btn btn-primary btn-lg" type="button" id="button-nuevo">
+                    Nuevo juego</button></p>
+        </div>
+        <div *ngIf="save">
+            <button class="btn btn-success" onclick="this.blur();" type="button" id="button-verificar" (click)="guardar()">Guardar
+                partida</button>
+        </div>
+        <div style="justify-content: center; margin-top: 2rem;" onclick="this.blur();" class="row" *ngIf="enJuego">
+            <p><button [disabled]="!registrarSecuencia" (click)="finalizar()" class="btn btn-danger btn-lg" type="button" id="button-fin">
+                    Finalizar</button></p>
+        </div>
+    </div>
+</div>

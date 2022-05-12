@@ -45,10 +45,10 @@ export class MenuPrincipalComponent implements OnInit {
         this.user = data;
         if(this.user){
           this.estado_activo = true;
-         // this.mail_usuario='sofia@sofia';
+      
         }
         else{ this.estado_activo = false;
-          //this.mail_usuario='';
+        
         }
 
       },
